@@ -8,6 +8,7 @@ from solution import if_sum_from_list_eq_k
         (17, [10, 15, 3, 7]),
         (2, [1,1]),
         (100, [20, 50, 60, 40, 80]),
+        (8, [8, 1, 2, 0, 4]),
     ],
 )
 def test_should_return_true(

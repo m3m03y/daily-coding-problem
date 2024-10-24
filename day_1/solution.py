@@ -10,11 +10,10 @@ def if_sum_from_list_eq_k(k: int, numbers: list):
     if len(numbers) < 2:
         return False
 
-    for idx, i in enumerate(numbers):
-        if i > k:
-            continue
-
-        for j in numbers[idx+1:]:
-            if i + j == k:
-                return True
+    numbers_set = set()
+    for number in numbers:
+        rest = k - number
+        if rest in numbers_set:
+            return True
+        numbers_set.add(number)
     return False
