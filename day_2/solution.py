@@ -8,12 +8,12 @@ def create_new_array_from_sums(original_arr: list) -> list:
     array is the product of all the numbers in 
     the original array except the one at i.
     """
-    new_arr = []
+    product_of_all = 1
 
-    for i in range(len(original_arr)):
-        new_element = 1
-        for idx, element in enumerate(original_arr):
-            if i != idx:
-                new_element *= element
-        new_arr.append(new_element)
+    for element in original_arr:
+        product_of_all *= element
+
+    new_arr = []
+    for element in original_arr:
+        new_arr.append(product_of_all/element)
     return new_arr
