@@ -1,4 +1,6 @@
-#easy
+# Day 1
+
+#easy #google
 
 This problem was recently asked by Google.
 
