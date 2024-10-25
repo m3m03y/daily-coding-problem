@@ -1,4 +1,4 @@
-"""Tests for first problem"""
+"""Tests for second problem"""
 import pytest
 from solution import create_new_array_from_sums
 
