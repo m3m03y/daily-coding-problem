@@ -13,7 +13,7 @@ def find_missing_positive_intiger(original_arr: list) -> int:
 
     original_arr.sort()
     first_positive = 1
-    for _, number in enumerate(original_arr):
+    for number in original_arr:
         if number < 0:
             continue
         if number > first_positive:
