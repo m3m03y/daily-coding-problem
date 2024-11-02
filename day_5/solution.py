@@ -10,12 +10,8 @@ def cons(a, b):
 
 def car(pair):
     """Returns the first element of the pair"""
-    def helper(a = None, _b = None):
-        return a
-    return pair(helper)
+    return pair(lambda a, _b: a)
 
 def cdr(pair):
     """Returns the last element of the pair"""
-    def helper(_a = None, b = None):
-        return b
-    return pair(helper)
+    return pair(lambda _a, b: b)
