@@ -2,7 +2,7 @@
 Solution for day 4 task
 """
 
-def find_missing_positive_intiger(original_arr: list) -> int:
+def find_missing_positive_intiger(nums: list) -> int:
     """
     Given an array of integers, find the first missing positive 
     integer in linear time and constant space. In other words, 
@@ -10,15 +10,19 @@ def find_missing_positive_intiger(original_arr: list) -> int:
     the array. The array can contain duplicates and negative 
     numbers as well.
     """
+    if len(nums) == 0:
+        return 1
 
-    original_arr.sort()
-    first_positive = 1
-    for number in original_arr:
-        if number < 0:
-            continue
-        if number > first_positive:
-            break
-        if number == first_positive:
-            first_positive += 1
+    for idx, _ in enumerate(nums):
+        while (idx+1 != nums[idx] and
+                0 < nums[idx] <= len(nums)):
+            position = nums[idx]
+            if nums[idx] == nums[position - 1]:
+                break
+            nums[idx], nums[position-1] = nums[position-1], nums[idx]
 
-    return first_positive
+    for idx, number in enumerate(nums, 1):
+        if number != idx:
+            return idx
+
+    return len(nums) + 1

@@ -3,7 +3,7 @@ import pytest
 from solution import find_missing_positive_intiger
 
 @pytest.mark.parametrize(
-    "original_arr, expected",
+    "nums, expected",
     [
         ([3, 4, -1, 1], 2),
         ([1, 2, 0], 3),
@@ -19,10 +19,10 @@ from solution import find_missing_positive_intiger
     ],
 )
 def test_should_return_missing_positive_number(
-        original_arr: list, expected: int
+        nums: list, expected: int
     ) -> None:
     """
     Test whether function returns missing positive
     number based on given array 
     """
-    assert find_missing_positive_intiger(original_arr) == expected
+    assert find_missing_positive_intiger(nums) == expected
